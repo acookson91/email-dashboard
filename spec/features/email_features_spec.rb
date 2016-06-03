@@ -8,6 +8,10 @@ context 'summary page' do
     visit '/'
   end
 
+  scenario 'title shows summary' do
+    expect(page).to have_content('Email Summary')
+  end
+
   scenario 'shows number of email events recieved' do
     expect(page).to have_content('Total Email Events: 4')
   end
