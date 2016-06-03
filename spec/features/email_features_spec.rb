@@ -8,6 +8,10 @@ context 'summary page' do
     visit '/'
   end
 
+  scenario 'links show dependant on email types' do
+    expect(page).to have_content('Shipment UserConfirmation')
+  end
+
   scenario 'title shows summary' do
     expect(page).to have_content('Email Summary')
   end
