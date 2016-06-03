@@ -19,3 +19,10 @@ def create_bad_data
    Email.create(:Address => 'barney@lostmy.name', :EmailType => 'Shipment',
           :Event => 'click', :Timestamp => 1432820696)
 end
+
+def order_event
+  {:Address => 'barney@lostmy.name',
+  :EmailType => 'Order',
+  :Event => 'send',
+  :Timestamp => 1432820696}
+end

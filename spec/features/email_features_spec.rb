@@ -12,6 +12,13 @@ context 'summary page' do
     expect(page).to have_content('Shipment')
   end
 
+  scenario 'shows order link once added' do
+    expect(page).not_to have_content('Order')
+    Email.create(order_event)
+    visit '/'
+    expect(page).to have_content('Order')
+  end
+
   scenario 'title shows summary' do
     expect(page).to have_content('Email Summary')
   end
