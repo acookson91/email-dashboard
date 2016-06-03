@@ -9,7 +9,7 @@ $ git clone https://github.com/acookson91/email-dashboard.git
 $ cd email-dashboard
 $ bundle install
 $ rake db:create
-$rake db:migrate
+$ rake db:migrate
 ```
 
 ## Running the Dashboard
