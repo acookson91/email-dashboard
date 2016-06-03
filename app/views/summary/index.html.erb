@@ -1,26 +1,28 @@
 
-<%= @title %> Summary
+<h1><%= @title %> Summary</h1>
 
-Total Email Events: <%= @total_events %>
-Sent: <%= @sent %>
-Opened: <%= @opened %>
-Clicked: <%= @clicked %>
+<p>Total Email Events: <b><%= @total_events %></b></p>
+<p>Sent: <b><%= @sent %></b></p>
+<p>Opened: <b><%= @opened %></b></p>
+<p>Clicked: <b><%= @clicked %></b></p>
+
+<h3> Email Type Breakdown</h3>
 
 <% @types.each do |type| %>
   <%= link_to type, root_path(:type => type) %>
 <% end %>
 
 
-Open Rate:
+<p>Open Rate:
 <% if @opened == 0 || @sent == 0 %>
-  Not enough information
+  <b>Not enough information</b>
 <% else %>
-<%= (@opened.to_f / @sent.to_f * 100).round(2) %>%
-<% end %>
+<b><%= (@opened.to_f / @sent.to_f * 100).round(2) %>%</b>
+<% end %></p>
 
-Click Rate:
+<p>Click Rate:
 <% if @clicked == 0 || @opened == 0 %>
-  Not enough information
+  <b>Not enough information</b>
 <% else %>
-<%= (@clicked.to_f / @opened.to_f * 100).round(2) %>%
-<% end %>
+<b><%= (@clicked.to_f / @opened.to_f * 100).round(2) %>%</b>
+<% end %></p>
