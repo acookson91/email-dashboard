@@ -6,6 +6,10 @@ Sent: <%= @sent %>
 Opened: <%= @opened %>
 Clicked: <%= @clicked %>
 
+<% @types.each do |type| %>
+  <%= link_to type, summary_index_path(:type => type) %>
+<% end %>
+
 
 Open Rate:
 <% if @opened == 0 || @sent == 0 %>

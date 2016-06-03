@@ -9,7 +9,7 @@ context 'summary page' do
   end
 
   scenario 'links show dependant on email types' do
-    expect(page).to have_content('Shipment UserConfirmation')
+    expect(page).to have_content('Shipment')
   end
 
   scenario 'title shows summary' do
