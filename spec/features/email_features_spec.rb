@@ -49,15 +49,23 @@ context 'summary page' do
 
 end
 
-context 'Shipment Summary' do
+context 'Order Summary' do
 
   before do
     create_email_data
-    visit '/?type=Shipment'
+    create_order_data
+    visit '/'
   end
 
-  scenario 'title shows correct summary of shipment' do
-    expect(page).to have_content('Shipment Summary')
+  scenario 'title shows correct summary of Order' do
+    click_link('Order')
+    expect(page).to have_content('Order Summary')
+  end
+
+  scenario 'expect stats to change when order clicked' do
+    expect(page).not_to have_content('Sent: 2 Opened: 1 Clicked: 0')
+    click_link('Order')
+    expect(page).to have_content('Sent: 2 Opened: 1 Clicked: 0')
   end
 
 end
