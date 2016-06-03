@@ -16,4 +16,13 @@ context 'summary page' do
     expect(page).to have_content('Opened: 1')
   end
 
+  scenario 'shows number of clicked emails' do
+    expect(page).to have_content('Clicked: 1')
+  end
+
+  scenario 'shows number of clicked sent' do
+    expect(page).to have_content('Sent: 1')
+  end
+
+
 end
