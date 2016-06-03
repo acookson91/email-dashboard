@@ -38,6 +38,19 @@ context 'summary page' do
 
 end
 
+context 'Shipment Summary' do
+
+  before do
+    create_email_data
+    visit '/?type=Shipment'
+  end
+
+  scenario 'title shows correct summary of shipment' do
+    expect(page).to have_content('Shipment Summary')
+  end
+
+end
+
 context 'Bad data' do
 
   before do

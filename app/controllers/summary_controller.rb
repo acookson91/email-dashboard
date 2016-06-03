@@ -1,7 +1,7 @@
 class SummaryController < ApplicationController
 
   def index
-    @title = 'Email'
+    @title = params[:type] || 'Email'
     @emails = Email.all
     @total_events = @emails.count
     @sent = type_count('send')
