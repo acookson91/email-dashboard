@@ -21,7 +21,7 @@ context 'summary page' do
   end
 
   scenario 'shows number of clicked sent' do
-    expect(page).to have_content('Sent: 1')
+    expect(page).to have_content('Sent: 2')
   end
 
 

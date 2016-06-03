@@ -3,7 +3,9 @@ class SummaryController < ApplicationController
   def index
     @emails = Email.all
     @total_events = @emails.count
+    @sent = type_count('send')
     @opened = type_count('open')
+    @clicked = type_count('click')
   end
 
   private
