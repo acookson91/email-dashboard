@@ -2,7 +2,13 @@ class SummaryController < ApplicationController
 
   def index
     @title = params[:type] || 'Email'
-    @emails = Email.all
+    @all_emails = Email.all
+    @filtered = filter_type(@all_emails, params[:type])
+    @emails = if @filtered.empty?
+    @all_emails
+      else
+    @filtered
+    end
     @total_events = @emails.count
     @sent = type_count('send')
     @opened = type_count('open')
@@ -12,12 +18,19 @@ class SummaryController < ApplicationController
 
   private
 
+  def filter_type(emails,type)
+    emails.select do |email|
+      email.show_type(type)
+    end
+  end
+
   def type_count(type)
     @emails.select {|email| email.Event == type }.count
   end
 
   def find_types
-    @emails.select(:EmailType).map(&:EmailType).uniq
+    @all_emails.select(:EmailType).map(&:EmailType).uniq
   end
+
 
 end
