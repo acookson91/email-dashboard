@@ -1,6 +1,6 @@
 # Email Dashboard
 
-**Tash to build a dashboard that can receive information from a webhook.**
+**Task to build a dashboard that can receive information from a webhook.**
 
 ## Installation Instructions
 
