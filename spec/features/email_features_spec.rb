@@ -24,5 +24,13 @@ context 'summary page' do
     expect(page).to have_content('Sent: 2')
   end
 
+  scenario 'shows the click rate' do
+    expect(page).to have_content('Click Rate: 0.5%')
+  end
+
+  scenario 'shows the open rate' do
+    expect(page).to have_content('Open Rate: 50%')
+  end
+
 
 end
