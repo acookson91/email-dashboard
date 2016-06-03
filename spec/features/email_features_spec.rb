@@ -25,12 +25,30 @@ context 'summary page' do
   end
 
   scenario 'shows the click rate' do
-    expect(page).to have_content('Click Rate: 0.5%')
+    expect(page).to have_content('Click Rate: 100.0%')
   end
 
   scenario 'shows the open rate' do
-    expect(page).to have_content('Open Rate: 50%')
+    expect(page).to have_content('Open Rate: 50.0%')
   end
 
+end
+
+context 'Bad data' do
+
+  before do
+    create_bad_data
+    visit '/'
+  end
+
+  scenario 'not enough data to calculate open rate' do
+    expect(page).not_to have_content('Open Rate: 0.0%')
+    expect(page).to have_content('Open Rate: Not enough information')
+  end
+
+  scenario 'not enough data to calculate click rate' do
+    expect(page).not_to have_content('Click Rate: Infinity%')
+    expect(page).to have_content('Click Rate: Not enough information')
+  end
 
 end
