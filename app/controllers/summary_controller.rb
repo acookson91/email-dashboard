@@ -4,11 +4,7 @@ class SummaryController < ApplicationController
     @title = params[:type] || 'Email'
     @all_emails = Email.all
     @filtered = filter_type(@all_emails, params[:type])
-    @emails = if @filtered.empty?
-    @all_emails
-      else
-    @filtered
-    end
+    @emails = @filtered.empty? ? @all_emails : @filtered
     @total_events = @emails.count
     @sent = type_count('send')
     @opened = type_count('open')
