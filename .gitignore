@@ -6,6 +6,11 @@
 
 # Ignore bundler config.
 /.bundle
+/listener
+/llirdnam
+./listener
+./llirdnam
+
 
 # Ignore all logfiles and tempfiles.
 /log/*
