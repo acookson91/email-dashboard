@@ -10,6 +10,8 @@
 /llirdnam
 ./listener
 ./llirdnam
+/go-lost_my_name
+./go-lost_my_name
 
 
 # Ignore all logfiles and tempfiles.
