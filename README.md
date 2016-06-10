@@ -8,8 +8,9 @@
 $ git clone https://github.com/acookson91/email-dashboard.git
 $ cd email-dashboard
 $ bundle install
+brew install redis
 $ rake db:create
-$rake db:migrate
+$ rake db:migrate
 ```
 
 ## Running the Dashboard
@@ -19,6 +20,16 @@ Start the rails application
 ```
 rails s
 ```
+
+Start the Redis/Sidekiq (Worker that ques data storage)
+
+```
+#In a new command window
+bundle exec sidekiq
+#In a new command window
+redis-server /usr/local/etc/redis.conf
+```
+
 
 Set up the listener in a new command tab
 
