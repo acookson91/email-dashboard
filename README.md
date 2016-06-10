@@ -21,7 +21,7 @@ Start the rails application
 rails s
 ```
 
-Start the Redis/Sidekiq (Worker que data storage)
+Start the Redis/Sidekiq (Worker that ques data storage)
 
 ```
 #In a new command window
